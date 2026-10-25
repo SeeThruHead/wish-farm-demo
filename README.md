@@ -2,7 +2,7 @@
 
 Wish Farm is a planner for the money left over after your bills. You give it a list of things you want, in order (a Mac mini, a fishing boat, a trip to Japan, an emergency fund), and it works out, payday by payday, what to put toward each one and when each one is paid for. If you use YNAB, it keeps your YNAB targets in step with that plan, hour by hour.
 
-**[Click through the slideshow →](https://blog.shanekeulen.com/wish-farm-demo/)**
+**[Click through the slideshow →](docs/slides/01.md)**
 
 ![Dave's Wish Farm timeline](docs/images/02-timeline.png)
 
