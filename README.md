@@ -158,6 +158,47 @@ What an agent can reach:
 
 The agent works through the same rules as the app. Every change is checked the way a form would check it, and the plan recalculates the same way. Every plan in this demo was entered through these tools.
 
+### What an agent can and can't see
+
+An agent only ever talks to Wish Farm, never to YNAB. It sees your plan: income and expenses (names, amounts, dates), cash, your wishes and how much is saved toward each, and the forecast. It never sees a transaction (Wish Farm doesn't read them), your account balances, other categories, or your YNAB token.
+
+Only Wish Farm writes to YNAB, and only the changes listed above. An agent can change your plan, but it can't reach into YNAB itself.
+
+Two things to know:
+
+- **Connect YNAB in the browser, not in a chat.** If you paste your YNAB token to an agent, it's in that conversation.
+- **Anything you tell an agent, it knows.** That's true in every mode below.
+
+### Hiding your numbers from agents
+
+If you'd rather your agent didn't see your money at all, switch on **Hide amounts and names from agents** in Settings.
+
+<img src="docs/images/09-hide-from-agents.png" width="70%" alt="The switch in Settings">
+
+From then on, every amount and every name in an agent's answers reads "hidden". It still sees the order of your wishes and the day each one is paid for:
+
+```json
+{
+  "wishes": [
+    { "name": "hidden", "cost": { "_tag": "Fixed", "amount": "hidden" }, "kind": "treat", "priority": 1 },
+    { "name": "hidden", "cost": { "_tag": "PaysOff", "expenseId": "01a1714d-…" }, "kind": "saving", "priority": 2 }
+  ],
+  "cash": { "cash": "hidden", "floor": "hidden", "countedOn": "2026-10-25" },
+  "funded": [
+    { "name": "hidden", "day": "2026-11-13" },
+    { "name": "hidden", "day": "2027-01-14" }
+  ]
+}
+```
+
+That limits what it can do for you:
+
+- It can still add wishes and expenses you describe, reorder wishes, set deadlines, mark things bought, change the treat/saving split and refresh from YNAB.
+- It can't tell you how much you need, how much you have, or which wish is which. "Speed up my car wish" in a new conversation gets "I can't tell which wish that is while amounts and names are hidden."
+- The browser and YNAB keep seeing the real numbers. Only what goes out to agents changes, and the switch is checked on every request, so an agent can't get around it.
+
+For complete privacy, run a local agent (a model on your own machine), so nothing leaves your network.
+
 ## Running it
 
 Wish Farm runs as a single small server with its own database, in your browser on desktop and phone. It works without YNAB too: you enter your income and expenses in Setup yourself. You can sign in with a username and password, or with your own single sign-on.
