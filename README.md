@@ -134,6 +134,30 @@ Make three category groups in YNAB:
 - **Wish List:** wishes you're thinking about but haven't committed to.
 - **Wish Farm Complete:** where finished wishes and paid-off debts go.
 
+## Let an agent run it
+
+Everything you can do in Wish Farm, an AI agent can do too. Wish Farm has a built-in MCP server. In **Settings → Agents**, name the agent (Claude Code, Codex or Claude Desktop) and press **Create token**. Each agent gets its own token, and you can revoke it from the same list.
+
+From there you can talk about your money in plain words:
+
+| You say | The agent |
+|---|---|
+| "I just got paid. I've got $1,850 in chequing and never want to go under $250." | records the cash on hand and the floor you never spend below |
+| "Add a Onewheel GT for $3,400, after the Mac mini." | adds the wish in that spot in the queue |
+| "What if I get a $2,000 tax refund in April?" | adds the refund and reads you which wishes come sooner |
+| "Move Japan ahead of the carry-on, and it has to be paid for by April 1." | reorders the queue and sets the deadline |
+| "Give treats 70% for a while." | changes how each payday is split |
+| "I bought the Mac mini." | takes it off the list as bought, and the next treat starts filling |
+| "Pull my latest numbers from YNAB." | refreshes from YNAB and tells you what changed |
+
+What an agent can reach:
+
+- **Read** the whole plan, and the forecast: the day each wish is paid for, each debt that ends, and any deadline that would be missed.
+- **Change** pay, other income and one-off money; bills and debts (add, change an amount from a date on, end one); wishes (add, change, reorder, mark as bought or dropped); cash on hand; and the treat/saving split.
+- **YNAB:** connect or disconnect a budget, refresh from it, and turn keeping YNAB in step on or off.
+
+The agent works through the same rules as the app. Every change is checked the way a form would check it, and the plan recalculates the same way. Every plan in this demo was entered through these tools.
+
 ## Running it
 
 Wish Farm runs as a single small server with its own database, in your browser on desktop and phone. It works without YNAB too: you enter your income and expenses in Setup yourself. You can sign in with a username and password, or with your own single sign-on.
